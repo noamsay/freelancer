@@ -32,7 +32,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: {{ site.font }};
     font-weight: 700;
 }
 
@@ -82,8 +82,8 @@ hr.star-primary:after {
 
 header {
     text-align: center;
-    color: #fff;
-    background: #{{ site.color.primary }};
+    color: #{{ site.color.secondary }};
+    /*background: #{{ site.color.primary }};*/
 }
 
 header .container {
@@ -99,7 +99,7 @@ header img {
 header .intro-text .name {
     display: block;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: {{ site.font }};
     font-size: 2em;
     font-weight: 700;
 }
@@ -122,6 +122,10 @@ header .intro-text .skills {
     header .intro-text .skills {
         font-size: 1.75em;
     }
+}
+
+.navbar-brand {
+  color: #{{ site.color.primary }};
 }
 
 @media(min-width:768px) {
@@ -150,7 +154,7 @@ header .intro-text .skills {
 
 .navbar {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: {{ site.font }};
     font-weight: 700;
 }
 
@@ -164,6 +168,19 @@ header .intro-text .skills {
 
 .navbar .navbar-nav li a:focus {
     outline: 0;
+}
+
+.navbar-default {
+  color: #{{ site.color.primary }};
+  background: #fff;
+}
+
+#navigation {
+  color: #{{ site.color.primary }};
+}
+
+#logo {
+  color: #{{ site.color.primary }};
 }
 
 .navbar-default,
@@ -183,6 +200,11 @@ section h2 {
 section.success {
     color: #fff;
     background: #{{ site.color.primary }};
+}
+
+section.blueonwhite {
+    color: #{{ site.color.primary }};
+    background: #fff;
 }
 
 @media(max-width:767px) {
@@ -443,6 +465,16 @@ footer .footer-below {
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #{{ site.color.secondary }};;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: #fff;
+    background-color: #{{ site.color.secondary-dark }} ;
 }
 
 .navbar-nav>.active>a {
